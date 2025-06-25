@@ -1,0 +1,20 @@
+[
+  {
+    "name": "https://google.maps.com/some-script.js",
+    "type": "external",
+    "hash": null,
+    "reason": "External script - some-script.js"
+  },
+  {
+    "name": "chunk.1234.js",
+    "type": "local",
+    "hash": "sha384-BEG4tGYxPGNtQMZfH956byVKW5/41lD80coQNjmFPwR139R4OlgmwsH3LF5LST7E",
+    "reason": "Lazy loaded module chunk"
+  },
+  {
+    "name": "script.js",
+    "type": "local",
+    "hash": "sha384-s/QK0hfhqtfo67+Xs21tHQC3vlooU1XRiPOjy86AZ4XTaDKr4uiBXMu9gvwKnXNP",
+    "reason": "Application script"
+  }
+]

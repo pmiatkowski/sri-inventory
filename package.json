@@ -1,0 +1,40 @@
+{
+  "name": "sri-inventory",
+  "version": "1.0.0",
+  "description": "A TypeScript utility for generating Subresource Integrity (SRI) hashes and script inventories to enhance web application security and maintain PCI DSS 6.4.3 compliance",
+  "main": "src/utils/index.ts",
+  "keywords": [
+    "sri",
+    "subresource-integrity",
+    "security",
+    "pci-dss",
+    "inventory",
+    "hash",
+    "sha384",
+    "scripts",
+    "typescript"
+  ],
+  "homepage": "https://github.com/pmiatkowski/sri-inventory#readme",
+  "bugs": {
+    "url": "https://github.com/pmiatkowski/sri-inventory/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmiatkowski/sri-inventory.git"
+  },
+  "license": "ISC",
+  "author": "Pawel Miatkowski",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "start": "tsx src/index.ts -- --target=./dist"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "jsdom": "^26.1.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
