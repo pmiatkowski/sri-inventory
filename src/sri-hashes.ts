@@ -29,19 +29,22 @@ export async function sriHashes(...files: string[]) {
             const linkElements = Array.from(document.querySelectorAll('link,script'));
             await Promise.all(linkElements.map(async (el: HTMLElement) => {
                 const src = el.getAttribute('src') || el.getAttribute('href');
-                const integrity = el.getAttribute('integrity');
 
-                if (!src || src.startsWith('http') || src.startsWith('//') || integrity) {
+                if (!src || src.startsWith('http') || src.startsWith('//')) {
                     return;
                 }
 
                 /**
                  *  handle relative paths and remove query strings
                  */
-                const srcPath = path.resolve(target, src.replace(/^\//, '').replace(/\?.*$/, ''));
-                const fileContent = await fs.readFile(srcPath);
-                const sriHash = generateSRIHash(fileContent);
+                let sriHash = el.getAttribute('integrity');
+                if(!sriHash) {
+                    const srcPath = path.resolve(target, src.replace(/^\//, '').replace(/\?.*$/, ''));
+                    const fileContent = await fs.readFile(srcPath);
+                    sriHash = generateSRIHash(fileContent);
+                }
                 el.setAttribute('integrity', sriHash);
+                el.setAttribute('crossorigin', 'anonymous');
 
                 console.log(`SRI hash for ${src}: ${sriHash}`);
             }));

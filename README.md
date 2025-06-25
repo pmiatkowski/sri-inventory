@@ -52,6 +52,7 @@ This will:
 
 1. Generate a script inventory (`scripts-inventory.json`)
 2. Add SRI hashes to your HTML files
+3. Add `crossorigin="anonymous` attributes
 
 ### Command Line Options
 
@@ -152,18 +153,8 @@ After:
 ### Example 1: Basic Angular/React Build
 
 ```bash
-# Build your application
-npm run build
-
-# Generate SRI hashes and inventory
-npx sri-inventory --target=./dist
-```
-
-### Example 2: Custom Build Directory
-
-```bash
-# For applications with custom build output
-npx sri-inventory --target=./build
+# Will change files in dist folder
+npm start
 ```
 
 ### Example 3: Multiple HTML Files
